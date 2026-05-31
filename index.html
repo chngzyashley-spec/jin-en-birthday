@@ -90,6 +90,24 @@
             gap: 40px;
         }
 
+        @media (max-width: 768px) {
+            .split-layout {
+                flex-direction: column;
+                width: 95%;
+                height: 90%;
+                gap: 10px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .split-layout {
+                gap: 5px;
+                width: 100%;
+                padding: 0 10px;
+            }
+        }
+
         .left-side, .right-side {
             flex: 1;
             display: flex;
@@ -107,6 +125,18 @@
             text-align: center;
             width: 100%;
             max-width: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 15px 10px;
+            }
         }
 
         .hint-container {
@@ -145,11 +175,49 @@
             letter-spacing: -0.5px;
         }
 
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.4rem;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+        }
+
         .dots-container {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .dots-container {
+                gap: 12px;
+                margin-bottom: 25px;
+            }
+
+            .dot {
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dots-container {
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .dot {
+                width: 12px;
+                height: 12px;
+            }
         }
 
         .dot {
@@ -172,6 +240,24 @@
             justify-items: center;
         }
 
+        @media (max-width: 768px) {
+            .keypad {
+                gap: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .keypad {
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .keypad {
+                gap: 8px;
+            }
+        }
+
         .key {
             width: 70px;
             height: 70px;
@@ -186,6 +272,32 @@
             justify-content: center;
             align-items: center;
             outline: none;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+
+        @media (max-width: 768px) {
+            .key {
+                width: 64px;
+                height: 64px;
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .key {
+                width: 56px;
+                height: 56px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .key {
+                width: 48px;
+                height: 48px;
+                font-size: 1rem;
+            }
         }
 
         .key:hover {
@@ -229,11 +341,35 @@
         .envelope-container {
             text-align: center;
             cursor: pointer;
+            padding: 20px;
         }
 
         #envelope-img {
             max-width: 300px;
+            width: 100%;
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @media (max-width: 768px) {
+            #envelope-img {
+                max-width: 220px;
+            }
+
+            .label {
+                font-size: 1rem;
+                margin-top: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #envelope-img {
+                max-width: 180px;
+            }
+
+            .label {
+                font-size: 0.9rem;
+                margin-top: 12px;
+            }
         }
 
         .envelope-container:hover #envelope-img {
@@ -267,6 +403,13 @@
             align-items: center;
         }
 
+        @media (max-width: 768px) {
+            .scrapbook-container {
+                width: 100%;
+                height: 85%;
+            }
+        }
+
         .main-card-wrapper {
             z-index: 10;
             transform: scale(0);
@@ -280,6 +423,21 @@
         .bday-card {
             max-width: 500px;
             max-height: 70vh;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .bday-card {
+                max-width: 85vw;
+                max-height: 60vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bday-card {
+                max-width: 90vw;
+                max-height: 55vh;
+            }
         }
 
         .photos-left, .photos-right {
@@ -288,6 +446,32 @@
             height: 100%;
             width: 30%;
             pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .photos-left, .photos-right {
+                width: 25%;
+            }
+
+            .scattered-photo {
+                max-width: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .photos-left, .photos-right {
+                width: 20%;
+            }
+
+            .scattered-photo {
+                max-width: 60px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .scattered-photo {
+                max-width: 50px;
+            }
         }
 
         .photos-left { left: 0; }
@@ -311,6 +495,24 @@
         .photo-4 { top: 35%; right: 5%; transform: rotate(-6deg) translateY(50px); transition-delay: 1.7s; }
         .photo-5 { bottom: 8%; left: 12%; transform: rotate(-3deg) translateY(50px); transition-delay: 2.0s; }
         .photo-6 { bottom: 18%; right: 15%; transform: rotate(5deg) translateY(50px); transition-delay: 2.3s; }
+
+        @media (max-width: 768px) {
+            .photo-1 { top: 8%; left: 4%; }
+            .photo-2 { top: 5%; right: 4%; }
+            .photo-3 { top: 42%; left: 3%; }
+            .photo-4 { top: 38%; right: 3%; }
+            .photo-5 { bottom: 5%; left: 6%; }
+            .photo-6 { bottom: 10%; right: 8%; }
+        }
+
+        @media (max-width: 480px) {
+            .photo-1 { top: 3%; left: 2%; }
+            .photo-2 { top: 2%; right: 2%; }
+            .photo-3 { top: 40%; left: 1%; }
+            .photo-4 { top: 36%; right: 1%; }
+            .photo-5 { bottom: 2%; left: 3%; }
+            .photo-6 { bottom: 5%; right: 4%; }
+        }
 
         .screen.active .photo-1 { transform: rotate(-5deg) translateY(0); }
         .screen.active .photo-2 { transform: rotate(4deg) translateY(0); }
@@ -342,6 +544,23 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            touch-action: manipulation;
+        }
+
+        @media (max-width: 768px) {
+            .apple-button {
+                padding: 12px 32px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .apple-button {
+                padding: 10px 24px;
+                font-size: 0.9rem;
+            }
         }
 
         .nav-buttons {
@@ -352,6 +571,20 @@
             display: flex;
             gap: 20px;
             z-index: 100;
+        }
+
+        @media (max-width: 768px) {
+            .nav-buttons {
+                bottom: 25px;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-buttons {
+                bottom: calc(15px + env(safe-area-inset-bottom, 0px));
+                gap: 12px;
+            }
         }
 
         .back-button {
@@ -379,12 +612,41 @@
             justify-content: center;
             gap: 20px;
             text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .candles-container {
+                gap: 12px;
+                padding: 5px;
+            }
+
+            .candles-container .page-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .candles-container {
+                gap: 8px;
+            }
+
+            .candles-container .page-title {
+                font-size: 1.2rem;
+            }
+
+            .instructions {
+                font-size: 0.75rem;
+                max-width: 200px;
+            }
         }
 
         .candles-container .page-title {
             font-size: 2rem;
             font-weight: 300;
             letter-spacing: -0.5px;
+            margin-top: 10px;
         }
 
         .webcam-container {
@@ -395,6 +657,27 @@
             overflow: hidden;
             background: black;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 768px) {
+            .webcam-container {
+                width: 260px;
+                height: 195px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .webcam-container {
+                width: 220px;
+                height: 165px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .webcam-container {
+                width: 180px;
+                height: 135px;
+            }
         }
 
         #webcam {
@@ -412,7 +695,9 @@
         .cake-area {
             position: relative;
             width: 500px;
+            max-width: 90vw;
             height: 330px;
+            max-height: 35vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -421,20 +706,70 @@
         .cake-bg {
             position: absolute;
             width: 500px;
+            max-width: 100%;
+            height: auto;
         }
 
         .cake {
             position: absolute;
             width: 160px;
+            max-width: 30%;
             z-index: 5;
         }
 
         .match {
             position: absolute;
             width: 40px;
+            max-width: 8%;
             pointer-events: none;
             transition: left 0.05s ease-out, top 0.05s ease-out;
             z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .cake-area {
+                width: 85vw;
+                height: 280px;
+                max-height: 30vh;
+            }
+
+            .cake {
+                width: 120px;
+            }
+
+            .match {
+                width: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cake-area {
+                width: 90vw;
+                height: 220px;
+                max-height: 28vh;
+            }
+
+            .cake {
+                width: 90px;
+            }
+
+            .match {
+                width: 28px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .cake-area {
+                height: 180px;
+            }
+
+            .cake {
+                width: 70px;
+            }
+
+            .match {
+                width: 24px;
+            }
         }
 
         .instructions {
@@ -442,6 +777,12 @@
             font-weight: 300;
             color: rgba(255, 255, 255, 0.7);
             max-width: 250px;
+        }
+
+        @media (max-width: 768px) {
+            .instructions {
+                font-size: 0.8rem;
+            }
         }
 
         /* Final Screen */
@@ -453,11 +794,40 @@
             gap: 40px;
             width: 100%;
             height: 100%;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .final-container {
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .final-container {
+                gap: 15px;
+            }
         }
 
         #final-image {
             max-width: 90%;
             max-height: 70vh;
+            width: auto;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            #final-image {
+                max-width: 95%;
+                max-height: 60vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #final-image {
+                max-width: 98%;
+                max-height: 55vh;
+            }
         }
 
         /* Confetti */
@@ -481,33 +851,48 @@
             border-radius: 2px;
         }
 
-        /* Responsive */
+        /* Prevent zoom on iOS when tapping inputs */
+        input, button, textarea, select {
+            font-size: 16px;
+        }
+
+        /* Smooth scrolling for mobile */
         @media (max-width: 768px) {
-            .split-layout {
-                flex-direction: column;
-                justify-content: flex-start;
-                padding-top: 40px;
-            }
-            
-            .left-side {
-                height: 30%;
-            }
-            
-            .polaroid-hero {
-                max-height: 250px;
-            }
-            
-            .bday-card {
-                max-width: 80%;
-            }
-            
-            .scattered-photo {
-                max-width: 100px;
+            body {
+                -webkit-overflow-scrolling: touch;
             }
 
-            .key {
-                width: 60px;
-                height: 60px;
+            .left-side {
+                height: auto;
+                flex: 0 0 auto;
+            }
+
+            .left-side .polaroid-hero {
+                max-height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .left-side .polaroid-hero {
+                max-height: 160px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .left-side .polaroid-hero {
+                max-height: 130px;
+            }
+        }
+
+        /* Hide polaroid on short screens to give keypad more room */
+        @media (max-height: 650px) {
+            .left-side {
+                display: none;
+            }
+
+            .split-layout {
+                height: 100%;
+                padding-top: 0;
             }
         }
 
