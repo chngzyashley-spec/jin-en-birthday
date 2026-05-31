@@ -329,6 +329,18 @@
             position: relative;
         }
 
+        @media (max-width: 768px) {
+            .progress-container {
+                height: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .progress-container {
+                height: 4px;
+            }
+        }
+
         #progress-bar {
             height: 100%;
             width: 0%;
@@ -342,6 +354,17 @@
             text-align: center;
             cursor: pointer;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .envelope-container {
+                gap: 14px;
+                padding: 10px;
+            }
         }
 
         #envelope-img {
@@ -369,6 +392,16 @@
             .label {
                 font-size: 0.9rem;
                 margin-top: 12px;
+            }
+        }
+
+        /* On mobile, envelope nav sits in the flow for centering */
+        @media (max-width: 768px) {
+            .envelope-nav {
+                position: static;
+                transform: none;
+                bottom: auto;
+                left: auto;
             }
         }
 
@@ -406,7 +439,17 @@
         @media (max-width: 768px) {
             .scrapbook-container {
                 width: 100%;
-                height: 85%;
+                height: auto;
+                min-height: 85%;
+                flex-direction: column;
+                gap: 6px;
+                padding: 8px 5px;
+                overflow-y: auto;
+            }
+
+            .bday-card {
+                max-width: 70vw;
+                max-height: 55vh;
             }
         }
 
@@ -435,8 +478,22 @@
 
         @media (max-width: 480px) {
             .bday-card {
-                max-width: 90vw;
-                max-height: 55vh;
+                max-width: 80vw;
+                max-height: 50vh;
+            }
+
+            .scattered-photo {
+                max-width: 45px !important;
+            }
+
+            .photos-left, .photos-right {
+                gap: 6px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .scattered-photo {
+                max-width: 38px !important;
             }
         }
 
@@ -520,6 +577,89 @@
         .screen.active .photo-4 { transform: rotate(-6deg) translateY(0); }
         .screen.active .photo-5 { transform: rotate(-3deg) translateY(0); }
         .screen.active .photo-6 { transform: rotate(5deg) translateY(0); }
+
+        /* Mobile: restructure scrapbook into vertical stack (photos above & below card) */
+        @media (max-width: 768px) {
+            .photos-left, .photos-right {
+                position: static !important;
+                width: 100% !important;
+                height: auto !important;
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: center !important;
+                gap: 8px;
+                pointer-events: none;
+            }
+
+            .photos-left {
+                order: 0;
+            }
+
+            .main-card-wrapper {
+                order: 1;
+                flex-shrink: 0;
+            }
+
+            .photos-right {
+                order: 2;
+            }
+
+            .scattered-photo {
+                position: static !important;
+                max-width: 55px !important;
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
+                transition: none;
+            }
+
+            /* Scattered rotation & floating per photo */
+            .photos-left .photo-1 {
+                transform: rotate(-5deg) !important;
+                animation: float 4s ease-in-out infinite !important;
+                animation-delay: 0s !important;
+            }
+            .photos-left .photo-3 {
+                transform: rotate(7deg) !important;
+                animation: float 4.5s ease-in-out infinite !important;
+                animation-delay: 0.5s !important;
+            }
+            .photos-left .photo-5 {
+                transform: rotate(-3deg) !important;
+                animation: float 5s ease-in-out infinite !important;
+                animation-delay: 1s !important;
+            }
+            .photos-right .photo-2 {
+                transform: rotate(4deg) !important;
+                animation: float 4.2s ease-in-out infinite !important;
+                animation-delay: 0.3s !important;
+            }
+            .photos-right .photo-4 {
+                transform: rotate(-6deg) !important;
+                animation: float 4.8s ease-in-out infinite !important;
+                animation-delay: 0.8s !important;
+            }
+            .photos-right .photo-6 {
+                transform: rotate(5deg) !important;
+                animation: float 5.2s ease-in-out infinite !important;
+                animation-delay: 1.3s !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scattered-photo {
+                max-width: 45px !important;
+            }
+            .photos-left, .photos-right {
+                gap: 6px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .scattered-photo {
+                max-width: 38px !important;
+            }
+        }
 
         /* Apply floating to photos too, but only when active */
         .screen.active .scattered-photo {
@@ -960,9 +1100,9 @@
                     <img src="assets/envelope.png" alt="Envelope" id="envelope-img">
                 </div>
                 <p class="label">Click to Open</p>
-            </div>
-            <div class="nav-buttons">
-                <button class="apple-button back-button" onclick="goBack()">Back</button>
+                <div class="nav-buttons envelope-nav">
+                    <button class="apple-button back-button" onclick="goBack()">Back</button>
+                </div>
             </div>
         </section>
 
